@@ -41,7 +41,7 @@ const FormUsers = ({createNewUser, updateInfo, updateUseById, setUpdateInfo}) =>
       </div>
       <div>
         <label htmlFor="password">Password</label>
-        <input type="password" id="password" {...register('pasword')} />
+        <input type="password" id="password" {...register('password')} />
       </div>
       <div>
         <label htmlFor="first_name">First Name</label>

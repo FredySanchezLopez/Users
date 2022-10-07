@@ -30,7 +30,7 @@ function App() {
 
 const createNewUser = data => {
   const URL = `${baseURL}/users/`
-  axios.post()
+  axios.post(URL, data)
     .then(res =>{
       console.log(res.data)
       getAllUsers()
@@ -65,7 +65,7 @@ const updateUseById = (id) => {
 
   return (
     <div className="App">
-      <h1>Users</h1>
+      <h1>Users CRUD</h1>
       <FormUsers
         createNewUser={createNewUser}
         updateInfo={updateInfo}
@@ -78,7 +78,7 @@ const updateUseById = (id) => {
             key={user.id}
             user={user}
             deleteUserById={deleteUserById}
-            setupdateinfo={setupdateinfo}
+            setUpdateInfo={setUpdateInfo}
           />
         ))
       }
