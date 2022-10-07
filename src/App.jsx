@@ -40,9 +40,9 @@ const createNewUser = data => {
 
 //Para eliminar un usuario específico
 
-const deleteUserById = (id) => {
-  const URL = `${baseURL}/user/${id}/`
-  axios.delete(URL, data)
+const deleteUserById = id => {
+  const URL = `${baseURL}/users/${id}/`
+  axios.delete(URL)
     .then(res => {
       console.log(res.data)
       getAllUsers()
@@ -51,9 +51,9 @@ const deleteUserById = (id) => {
 }
 
 //Para actualizar un usuario en específico
-const updateUseById = (id) => {
+const updateUserById = id => {
   const URL = `${baseURL}/users/${id}/`
-  axios.patch(URL, data)
+  axios.patch(URL, id)
     .then(res => {
       console.log(res.data)
       getAllUsers()
@@ -69,7 +69,7 @@ const updateUseById = (id) => {
       <FormUsers
         createNewUser={createNewUser}
         updateInfo={updateInfo}
-        updateUseById={updateUseById}
+        updateUserById={updateUserById}
         setUpdateInfo={setUpdateInfo}
       />
       {

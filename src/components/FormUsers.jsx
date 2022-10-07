@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 
-const defaultvalues = {
+const defaultValues = {
   email: '',
-  pasword: '',
+  password: '',
   first_name: '',
-  ñast_name: '',
+  last_name: '',
   birthday: ''
 }
 
-const FormUsers = ({createNewUser, updateInfo, updateUseById, setUpdateInfo}) => {
+const FormUsers = ({createNewUser, updateInfo, updateUserById, setUpdateInfo}) => {
 
-  const{handleSubmit,  reset, register} = useForm()
+  const{handleSubmit, reset, register} = useForm()
 
     useEffect(() => {
       if(updateInfo){
@@ -22,13 +22,13 @@ const FormUsers = ({createNewUser, updateInfo, updateUseById, setUpdateInfo}) =>
     const submit = data => {
         if(updateInfo){
           //Update
-          updateUseById(updateInfo.id, data)
+          updateUserById(updateInfo.id, data)
           setUpdateInfo()
         }else{
           //Create
           createNewUser(data)
         }
-        reset(defaultvalues)
+        reset(defaultValues)
     }
     
 
@@ -55,7 +55,7 @@ const FormUsers = ({createNewUser, updateInfo, updateUseById, setUpdateInfo}) =>
         <label htmlFor="birthday">BirthDay</label>
         <input type="date" id="birthday" {...register('birthday')} />
       </div>
-      <button>Create</button>
+      <button>{updateInfo ? 'Update' : 'Create'}</button>
     </form>
 
   )
