@@ -40,9 +40,9 @@ const createNewUser = data => {
 
 //Para eliminar un usuario específico
 
-const deleteUserById = () => {
+const deleteUserById = (id) => {
   const URL = `${baseURL}/user/${id}/`
-  axios.delete()
+  axios.delete(URL, data)
     .then(res => {
       console.log(res.data)
       getAllUsers()

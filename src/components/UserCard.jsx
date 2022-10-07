@@ -1,9 +1,9 @@
 import React from 'react'
 
-const UserCard = ({user, deleteUserById,  setupdateinfo}) => {
+const UserCard = ({user, deleteUserById,  setUpdateInfo}) => {
   
   const handleEdith = () => {
-    setupdateinfo(user)
+    setUpdateInfo(user)
   }
 
   return (
